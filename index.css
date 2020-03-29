@@ -27,6 +27,8 @@ body, html {
     0%,100%{
         background-image: url("https://raw.githubusercontent.com/showzadomain/showzatheband.github.io/master/assets/images/showza.png"), url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_1.JPG?raw=true");
         height: 100%;
+        
+        -webkit-appearance: textfield;
 
         background-position: center;
         background-repeat: no-repeat;
