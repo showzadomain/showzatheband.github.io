@@ -33,6 +33,18 @@ window.setInterval(function(){
   }
   document.body.setAttribute("data-background", nextBackground);
 }, 5000);
-
+// menu controls
+var toggleMenu = document.querySelector(".topnav");
+var toggleMenuButton = toggleMenu.querySelector(" button");
+var toggleMenuState = function (evt) {
+  evt.preventDefault();
+  var currentState = toggleMenu.getAttribute("data-state");
+  if (currentState === "closed") {
+    toggleMenu.setAttribute("data-state", "open");
+  } else {
+    toggleMenu.setAttribute("data-state", "closed");
+  }
+};
+toggleMenuButton.addEventListener("click", toggleMenuState);
 
 </script>
