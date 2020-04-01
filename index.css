@@ -1,28 +1,22 @@
 body {
     height: 100vh;
     margin: 0;
-    font-family: Helvetica;
-    color: white;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 30px;
 }
-
-.image {
-    border-radius: 100px;
+body {
+  font-family: Helvetica;
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 30px;
 }
-
-.item {
-    color: white;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-style: normal;
-}
-
 .topnav {
   position: fixed;
   top: 0;
   left: 0;
+  list-style: none;
+  z-index: 3;
+  margin: 0;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,12 +24,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  list-style: none;
-  z-index: 3;
-  margin: 0;
-  padding: 0;
 }
-
+.topnav .logo img {
+  border-radius: 100px;
+}
+.topnav button {
+  display: none;
+}
+.topnav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 .topnav li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,8 +48,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-
-.topnav a {
+.topnav a,
+.topnav button {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -53,23 +57,29 @@ body {
   color: white;
   font-weight: bold;
   font-style: normal;
-  font-size: 30px;
+  font-size: 40px;
 }
-
-.topnav a:hover {
+.topnav button {
+  border: inherit;
+  background: inherit;
+  cursor:pointer;
+}
+.topnav button:before {
+  content: "» ";
+  margin-right: 0.25em;
+}
+.topnav[data-state="open"] button:before {
+  content: "x ";
+}
+.topnav a:hover,
+.topnav button:hover {
     background-color: black;
     border-radius: 100px;
 }
-
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
 }
-
-.topnav .home img {
-  border-radius: 100px;
-}
-
 .gallery {
   position: fixed;
   top: 0;
@@ -80,7 +90,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .gallery li {
   position: absolute;
   top: 0;
@@ -95,15 +104,12 @@ body {
   -o-transition: opacity 2.0s ease-in-out 0.0s;
   transition: opacity 2.0s ease-in-out 0.0s;
 }
-
 .gallery li:nth-child(1) {
   background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_1.JPG?raw=true");
 }
-
 .gallery li:nth-child(2) {
   background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_2.JPG?raw=true");
 }
-
 .gallery li:nth-child(3) {
   background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_3.jpg?raw=trueg");
 }
@@ -119,4 +125,37 @@ body {
   height: 100%;
   background: url("https://raw.githubusercontent.com/showzadomain/showzatheband.github.io/master/assets/images/showza.png") rgba(0,0,0,0.15) center center no-repeat;
   background-size: 65%;
+}
+@media screen and (max-width: 1200px) {
+    .topnav {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: 100%;
+    }
+    .topnav button {
+      display: inherit;
+    }
+    .topnav ul {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin: 0;
+      padding: 0;
+    }
+    .topnav ul li {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+    }
+    .topnav[data-state="closed"] ul {
+      display: none;
+    }
 }
