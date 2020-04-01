@@ -1,57 +1,36 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en">
-  <title>
-      showzatheband
-  </title>
-  <link rel='icon' href='favicon.ico' type='image/x-icon'>
-  <link href="index.css" rel="stylesheet" type="text/css"/>
-  <body class="body">
-    <div class="container">
-			<div class="outer">
-		
-          <div class="topnav" id="myTopnav">
-            <a>
-              <form name="myform" action="index.html" method="POST">
-                <input type="image" class="image" src="assets/images/showzafavcon.jpg" alt="sq_interlock" width="125" height="125">
-              </form>
-            </a>
-            <div class="itemDiv"></div>
-            <a href="#news">
-              <div class="item">
-                live dates
-              </div>
-            </a>
-            <a href="#news">
-              <div class="item">
-                gallery
-              </div>
-            </a>
-            <a href="#news">
-              <div class="item">
-                news
-              </div>
-            </a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars">
-              <div class="menuItem">
-                menu
-              </div>
-              </i>
-            </a>
-				</div>
-			</div>
-		</div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>showzatheband</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'>
+    <link href="index.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body data-background="1">
+    <ul class="topnav">
+      <li><a href="/" title="Homepage" class="home"><img src="https://raw.githubusercontent.com/showzadomain/showzatheband.github.io/master/assets/images/showzafavcon.jpg" alt="showza_icon" width="125" height="125" /></a></li>
+      <li><a href="#news" class="item">live dates</a></li>
+      <li><a href="#news" class="item">gallery</a></li>
+      <li><a href="#news" class="item">news</a></li>
+    </ul>
+    <div class="hero"></div>
+    <ul class="gallery">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </body>
 </html>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
+
+window.setInterval(function(){
+  var currentBackground = document.body.getAttribute("data-background") * 1,
+      nextBackground = currentBackground + 1;
+  if (currentBackground >= 3) {
+    nextBackground = 1;
   }
-}
+  document.body.setAttribute("data-background", nextBackground);
+}, 5000);
+
+
 </script>
