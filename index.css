@@ -111,7 +111,7 @@ body {
   background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_2.JPG?raw=true");
 }
 .gallery li:nth-child(3) {
-  background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_3.jpg?raw=trueg");
+  background-image: url("https://github.com/showzadomain/showzatheband.github.io/blob/master/assets/images/bg_3.jpg?raw=true");
 }
 [data-background="1"] .gallery li:nth-child(1),
 [data-background="2"] .gallery li:nth-child(2),
